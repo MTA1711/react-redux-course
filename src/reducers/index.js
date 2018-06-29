@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
+import { CountriesReducer } from './reducer_countries';
+import { MortalityReducer } from './reducer_mortality';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+    countries : CountriesReducer,
+    mortality : MortalityReducer
 });
 
 export default rootReducer;

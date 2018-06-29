@@ -1,0 +1,37 @@
+.search-bar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.medium-flag{
+    width: 100px;
+    height: 70px;
+}
+
+.list-details{
+    margin-top: 25px;
+}
+
+.list-header{
+    margin-bottom: 25px;
+}
+
+.list-header div h4 {
+    font-weight: bold;
+}
+
+.mortality-list-item{
+    margin-top: 20px
+}
+
+.remove-btn {
+    text-align: right;
+}
+
+.remove-btn a {
+    font-size: 2em;
+}
+
+.remove-btn a:active, .remove-btn a:hover, .remove-btn a:visited{
+    text-decoration: none;
+}
