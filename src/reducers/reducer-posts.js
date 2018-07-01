@@ -8,6 +8,8 @@ export const reducerPosts = (state = postsInitialState, action) => {
             return action.payload;
         case ACTION_TYPE_POSTS.DELETE:
             return state.filter( (elt) =>{ if(elt.id != action.payload) return elt } );
+        case ACTION_TYPE_POSTS.CREATE:
+            return [...state, action.payload];
         default:
             return state;
     }

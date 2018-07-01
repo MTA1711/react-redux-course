@@ -7,7 +7,7 @@ const PostContent = ({post}) => {
             <p>{post.content}</p>
             <p>Auteur: {post.author}</p>
 
-            <p><button className="btn btn-default"><Link to="/">Retour</Link></button></p>
+            <p><Link to="/"><button className="btn btn-default">Retour</button></Link></p>
         </div>
     )
 }
