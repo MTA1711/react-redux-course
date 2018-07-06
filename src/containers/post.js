@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { readPost } from '../actions/index';
+//import { readPost } from '../actions/index';
+import { requestReadPost } from '../actions/posts.actions';
 import PostContent from '../components/post-content';
 
 class Post extends Component {
     componentWillMount() {
-        this.props.readPost(this.props.params.id);
+        this.props.requestReadPost(this.props.params.id);
     }
 
     render () {
@@ -31,7 +32,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return bindActionCreators({readPost}, dispatch);
+    return bindActionCreators({requestReadPost}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Post)

@@ -5,3 +5,4 @@ export const ACTION_TYPE_POSTS = {
     READ_ALL : "READ_ALL_POST",
     ERROR: "ERROR"
 }
+

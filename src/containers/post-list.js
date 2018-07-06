@@ -4,12 +4,13 @@ import { bindActionCreators } from 'redux';
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import {Link} from 'react-router';
 
-import { readAllPost, deletePost } from '../actions/index';
+//import { readAllPost, deletePost } from '../actions/index';
+import { requestReadAllPost, requestDeletePost } from '../actions/posts.actions';
 import PostListItem from '../components/post-list-item';
 
 class PostList extends Component {
     componentWillMount() {
-        this.props.readAllPost();
+        this.props.requestReadAllPost();
     }
     render () {
         return (
@@ -43,7 +44,7 @@ class PostList extends Component {
 
     deletePostCallback(post) {
         console.log("deletePost", post)
-        this.props.deletePost(post.id);
+        this.props.requestDeletePost(post.id);
     }
 }
 
@@ -54,7 +55,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return  bindActionCreators({readAllPost, deletePost}, dispatch);
+    return  bindActionCreators({requestReadAllPost, requestDeletePost}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList)

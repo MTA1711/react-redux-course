@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 
-import {createPost} from '../actions/index';
+import { requestCreatePost } from '../actions/posts.actions';
 
 const formConfig = {
     form: "createPostForm",
@@ -44,13 +44,13 @@ class PostForm extends Component {
     }
 
     createPost(post) {
-        this.props.createPost(post);
+        this.props.requestCreatePost(post);
         browserHistory.push("/");
     }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return bindActionCreators({createPost}, dispatch);
+    return bindActionCreators({requestCreatePost}, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(reduxForm(formConfig)(PostForm)) 

@@ -6,9 +6,11 @@ import thunk from 'redux-thunk';
 
 import Routes from './routes';
 import reducers from './reducers';
+import PostList from './containers/post-list';
 
-import PostList from './containers/post-list'
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+import {middlewares} from './middlewares/index';
+
+const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
