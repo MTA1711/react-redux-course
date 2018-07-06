@@ -4,7 +4,7 @@ import { apiRequest } from "../actions/api.actions";
 const BASE_URL = "http://localhost:3000/";
 
 export const postsMiddleware = ({dispatch}) => next => action => {
-    console.log("inside postsMiddleware", action)
+    console.log("inside postsMiddleware", action.type)
     next(action);
 
     switch (action.type) {
